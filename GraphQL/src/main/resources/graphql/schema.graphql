@@ -1,0 +1,17 @@
+type Movie {
+    id: ID!
+    title: String!
+    director: String!
+    releaseYear: Int!
+}
+
+type Query {
+    findAll: [Movie]
+    findById(id: ID!): Movie
+}
+
+type Mutation {
+    save(title: String!, director: String!, releaseYear: Int!): Movie
+    update(id: ID!, title: String, director: String, releaseYear: Int): Movie
+    delete(id: ID!): Boolean
+}
